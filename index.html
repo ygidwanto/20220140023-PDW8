@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugeng Tepang</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #e9ecef; /* Warna abu-abu muda */
+            font-family: Arial, sans-serif;
+        }
+        main {
+            background-color: #fff; /* Warna putih */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center; /* Membuat konten berada di tengah */
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        .profile-image {
+            display: block;
+            margin: 0 auto 20px; /* Membuat gambar berada di tengah */
+        }
+        .menu {
+            margin-top: 20px;
+        }
+        .btn-navy {
+            background-color: navy;
+            border-color: navy;
+            transition: background-color 0.3s ease;
+        }
+        .btn-navy:hover {
+            background-color: #001f3f;
+            border-color: #001f3f;
+        }
+        .product-info {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .product-info p {
+            margin-bottom: 0;
+        }
+        @media (max-width: 576px) {
+            .profile-image {
+                width: 150px;
+            }
+        }
+        /* Animasi untuk waktu real-time */
+        @keyframes blink {
+            0% { color: #007bff; }
+            50% { color: navy; }
+            100% { color: #007bff; }
+        }
+        #real-time {
+            animation: blink 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: #007bff; color: #fff;"> <!-- Warna hijau diganti menjadi biru -->
+        <h1>SUGENG RAWUH</h1>
+    </header>
+    <main class="container">
+        <section>
+            <img src="KUCING.jpg" alt="Profile Picture" class="img-fluid rounded-circle profile-image" width="200">
+            <div class="menu">
+                <a href="about_me.html" class="btn btn-primary btn-navy">About Me</a>
+                <a href="biodata.html" class="btn btn-primary btn-navy">Biodata</a>
+                <a href="form.html" class="btn btn-primary btn-navy">Form</a>
+                <a href="hoby.html" class="btn btn-primary btn-navy">Hobi</a>
+            </div>
+        </section>
+        <section>
+            <h2>Kenalkan aku adalah kucing yang menjelma menjadi raja</h2>
+            <p>Dan kalian bisa kepoin aku di sini yak</p>
+            <p id="real-time"></p> <!-- Tampilkan waktu real-time -->
+            <script>
+                function updateTime() {
+                    var now = new Date();
+                    var hours = now.getHours();
+                    var minutes = now.getMinutes();
+                    var seconds = now.getSeconds();
+                    var timeString = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+                    document.getElementById("real-time").textContent = "Waktu saat ini: " + timeString;
+                }
+                setInterval(updateTime, 1000);
+                updateTime(); // Memastikan waktu ditampilkan segera setelah halaman dimuat
+            </script>
+        </section>
+        <section class="product-info">
+            <p>YogiDewanto20220140023</p>
+        </section>
+    </main>
+</body>
+</html>
